@@ -2,6 +2,10 @@ import dotenv from "dotenv";
 import axios from "axios";
 dotenv.config();
 
+/* 
+    Sample URL for testing: http://localhost:3000/api/workout?time=30&location=home&equipment=none&muscle=arms
+*/
+
 const API_KEY = process.env.OPENAI_API_KEY;
 const MODEL = "text-davinci-003";
 
