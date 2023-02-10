@@ -1,5 +1,6 @@
 import React from "react";
-import { Flex, Image, Link, Box, Text } from "@chakra-ui/react";
+import Link from "next/link";
+import { Flex, Box, Text } from "@chakra-ui/react";
 
 const NavBar = () => {
   return (
@@ -28,15 +29,17 @@ const NavBar = () => {
         ></lottie-player>
       </Box>
       <Box>
-        <Text
-          fontSize={{ base: "24px", md: "40px", lg: "50px" }}
-          textAlign="center"
-          backgroundImage="linear-gradient(to right, #5ee7df, #b490ca)"
-          backgroundClip="text"
-          fontWeight="extrabold"
-        >
-          AI Workout Planner
-        </Text>
+        <Link href={'/'}>
+          <Text
+            fontSize={{ base: "24px", md: "40px", lg: "50px" }}
+            textAlign="center"
+            backgroundImage="linear-gradient(to right, #5ee7df, #b490ca)"
+            backgroundClip="text"
+            fontWeight="extrabold"
+          >
+            AI Workout Planner
+          </Text>
+        </Link>
       </Box>
       <Box
         width={{ base: "50px", md: "70px", lg: "100px" }}

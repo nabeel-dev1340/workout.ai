@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import NavBar from "components/NavBar";
+import Hero from "components/Hero";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
   const [time, setTime] = useState(30);
   const [muscle, setMuscle] = useState("chest");
   const [equipment, setEquipment] = useState("dumbbell");
-  const [location, setLocation] = useState("gym");
+  const [location, setLocation] = useState("gym")
 
   const [workoutData, setWorkoutData] = useState(null);
 
@@ -26,6 +27,7 @@ export default function Home() {
 
   //   fetchData();
   // }, [time, muscle, equipment, location]);
+
   return (
     <>
       <Head>
@@ -36,6 +38,7 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
+        <Hero />
       </main>
     </>
   );
