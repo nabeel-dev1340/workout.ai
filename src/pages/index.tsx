@@ -11,21 +11,21 @@ export default function Home() {
 
   const [workoutData, setWorkoutData] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!time || !muscle || !equipment || !location) {
-        return;
-      }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     if (!time || !muscle || !equipment || !location) {
+  //       return;
+  //     }
 
-      const response = await fetch(
-        `https://wild-gray-goshawk-wrap.cyclic.app/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
-      );
-      const data = await response.json();
-      setWorkoutData(data);
-    };
+  //     const response = await fetch(
+  //       `https://wild-gray-goshawk-wrap.cyclic.app/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
+  //     );
+  //     const data = await response.json();
+  //     setWorkoutData(data);
+  //   };
 
-    fetchData();
-  }, [time, muscle, equipment, location]);
+  //   fetchData();
+  // }, [time, muscle, equipment, location]);
   return (
     <>
       <Head>
@@ -36,7 +36,6 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
-        {workoutData && <div>{JSON.stringify(workoutData)}</div>}
       </main>
     </>
   );

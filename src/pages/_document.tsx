@@ -12,6 +12,10 @@ export default function Document() {
         />
       </Head>
       <body>
+        <script
+          defer
+          src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+        ></script>
         <Main />
         <NextScript />
       </body>
