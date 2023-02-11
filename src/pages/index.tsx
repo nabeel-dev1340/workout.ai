@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import NavBar from "components/NavBar";
 import Hero from "components/Hero";
+import UserInput from "components/UserInput";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
@@ -40,6 +41,7 @@ export default function Home() {
         <NavBar />
         <Hero />
       </main>
+      <UserInput/>
     </>
   );
 }
