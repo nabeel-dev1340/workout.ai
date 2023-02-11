@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import NavBar from "components/NavBar";
-import Hero from "components/Hero";
+import Headline from "components/Headline";
+import Tile from "components/Tile";
+import TilesContainer from "components/TilesContainer";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
@@ -40,7 +42,10 @@ export default function Home() {
       </Head>
       <main>
         <NavBar />
-        <Hero />
+        <Headline />
+        <TilesContainer>
+          <Tile />
+        </TilesContainer>
       </main>
     </>
   );

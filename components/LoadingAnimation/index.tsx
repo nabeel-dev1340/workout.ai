@@ -3,7 +3,7 @@ import { Box, Flex } from "@chakra-ui/react";
 
 const LoadingAnimation = () => {
   return (
-    <Flex justify="center" align="center" height={'100vh'}>
+    <Flex justifyContent="center" alignItems="center" width={"100%"} height='100vh'>
       <Box>
         <lottie-player
           src="https://assets3.lottiefiles.com/packages/lf20_McIaL4.json"
