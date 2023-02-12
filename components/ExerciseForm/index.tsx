@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   FormControl,
   FormLabel,
@@ -7,105 +7,80 @@ import {
   Stack,
   Text,
   Flex,
-} from "@chakra-ui/react";
+  Button,
+  HStack,
+  RadioGroup,
+  Radio
+} from '@chakra-ui/react'
 
-const muscles: string[] = ["Chest", "Back", "Shoulders", "Arms", "Legs", "Abs"];
+const muscles: string[] = ['Chest', 'Back', 'Shoulders', 'Arms', 'Legs', 'Abs']
 
 const equipment: string[] = [
-  "Dumbbells",
-  "Barbells",
-  "Kettlebells",
-  "Resistance Bands",
-  "Smith Machine",
-  "Pull Up Bar",
-];
+  'Dumbbells',
+  'Barbells',
+  'Kettlebells',
+  'Resistance Bands',
+  'Smith Machine',
+  'Pull Up Bar'
+]
 
 const ExerciseForm = () => {
-  const [selectedMuscle, setSelectedMuscle] = useState("");
-  const [gymLocation, setGymLocation] = useState(false);
-  const [homeLocation, setHomeLocation] = useState(false);
-  const [selectedEquipment, setSelectedEquipment] = useState<string[]>([]);
+  const [selectedMuscle, setSelectedMuscle] = useState('')
 
   const handleMuscleSelection = (event: any) => {
-    setSelectedMuscle(event.target.value);
-  };
-
-  const handleLocationSelection = (location: string) => {
-    if (location === "gym") {
-      setGymLocation(!gymLocation);
-    } else {
-      setHomeLocation(!homeLocation);
-    }
-  };
-
-  const handleEquipmentSelection = (equipment: string) => {
-    setSelectedEquipment((prevEquipment) => {
-      if (prevEquipment.includes(equipment)) {
-        return prevEquipment.filter((e) => e !== equipment);
-      } else {
-        return [...prevEquipment, equipment];
-      }
-    });
-  };
+    setSelectedMuscle(event.target.value)
+  }
 
   return (
-    <Flex justifyContent={"center"} alignItems={"center"}>
-      <form>
-        <FormControl>
-          <FormLabel htmlFor="muscle-select">
-            {" "}
-            <Text as="strong"> Muscles</Text>
-          </FormLabel>
+    <form>
+       <Stack alignItems={'center'} justifyContent={'center'} spacing={10}>
+        <HStack spacing={200}>
+          <FormControl>
+            <FormLabel htmlFor="muscle-select">
+              <Text as="strong"> Muscles</Text>
+            </FormLabel>
 
-          <Select
-            id="muscle-select"
-            value={selectedMuscle}
-            onChange={handleMuscleSelection}
-            width="300px"
-          >
-            <option value="">Select a muscle group</option>
-            {muscles.map((muscle) => (
-              <option key={muscle} value={muscle}>
-                {muscle}
-              </option>
-            ))}
-          </Select>
-        </FormControl>
-
-        <Stack mt={4}>
-          <FormLabel>
-            <Text as="strong"> Location </Text>
-          </FormLabel>
-          <Checkbox
-            isChecked={gymLocation}
-            onChange={() => handleLocationSelection("gym")}
-          >
-            Gym
-          </Checkbox>
-          <Checkbox
-            isChecked={homeLocation}
-            onChange={() => handleLocationSelection("home")}
-          >
-            Home
-          </Checkbox>
-        </Stack>
-
-        <Stack mt={4}>
+            <Select
+              id="muscle-select"
+              value={selectedMuscle}
+              onChange={handleMuscleSelection}
+              width="300px"
+            >
+              <option value="">Select a muscle group</option>
+              {muscles.map(muscle => (
+                <option key={muscle} value={muscle}>
+                  {muscle}
+                </option>
+              ))}
+            </Select>
+          </FormControl>
+          <HStack ml={4}>
+            <FormLabel mt={7}>
+              <Text as="strong"> Location </Text>
+            </FormLabel>
+            <Stack spacing={10} direction="row">
+              <RadioGroup mt={5}>
+                <Stack direction="row">
+                  <Radio value="1">
+                    <Text fontWeight={'light'}> Gym </Text>
+                  </Radio>
+                  <Radio value="2">
+                    <Text fontWeight={'light'}> Home </Text>
+                  </Radio>
+                </Stack>
+              </RadioGroup>
+            </Stack>
+          </HStack>
+        </HStack>
+        <Stack >
           <FormLabel>
             <Text as="strong"> Equipment</Text>
           </FormLabel>
-          {equipment.map((e) => (
-            <Checkbox
-              key={e}
-              isChecked={selectedEquipment.includes(e)}
-              onChange={(e) => handleEquipmentSelection(e as unknown as string)}
-            >
-              {e}
-            </Checkbox>
-          ))}
-        </Stack>
+          {equipment.map(e => <Checkbox key={e}><Text fontWeight={'light'}> {e} </Text></Checkbox>)}
+      </Stack>
+      </Stack>
       </form>
-    </Flex>
-  );
-};
-export default ExerciseForm;
+    
+  )
+}
+export default ExerciseForm

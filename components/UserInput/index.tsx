@@ -9,11 +9,13 @@ const UserInput = () => {
       <Box
         width="50%"
         height="50%"
-        bg="whiteAlpha.800"
-        marginTop={'50px'}
+        bg="white"
         marginRight={'15px'}
-        boxShadow={'md'}
         color="black"
+        fontWeight={600}
+        boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+        rounded={10}
+        padding= {'25px'}
       >
         <ExerciseForm />
       </Box>

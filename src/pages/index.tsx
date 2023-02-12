@@ -44,11 +44,11 @@ export default function Home() {
       <main>
         <NavBar />
         <Headline />
-        <TilesContainer>
+        <UserInput/>
+        {/* <TilesContainer>
           <Tile />
-        </TilesContainer>
+        </TilesContainer> */}
       </main>
-      <UserInput/>
     </>
   );
 }
