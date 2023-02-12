@@ -11,7 +11,7 @@ interface TileProps {
 }
 
 const Tile = ({
-  exercise = "Concentration Curl",
+  exercise = "Concentration Curls",
   reps = 10,
   sets = 3,
   time,
@@ -23,7 +23,7 @@ const Tile = ({
         alignItems="center"
         justifyContent={["space-around", "center", "space-around"]}
         bg="white"
-        width={["95%", "95%","95%","1024px", "1200px"]}
+        width={["95%", "95%","95%","1024px", "1100px"]}
         flexDirection={["column", "column", "row"]}
         height="180px"
         color="#3e234b"
@@ -39,19 +39,19 @@ const Tile = ({
           p={5}
         >
           <Flex flexDirection="column" gap={5}>
-            <Box>
+            <Box width="8rem">
               <Capsule text="Exercise" />
             </Box>
             <Box fontSize={["1xl", "1xl", "2xl"]}>1. {exercise}</Box>
           </Flex>
           <Flex flexDirection="column" gap={5} align="center">
-            <Box>
+            <Box width="4rem">
               <Capsule text="Sets" />
             </Box>
             <Box fontSize={["1xl", "1xl", "2xl"]}>{sets}</Box>
           </Flex>
           <Flex flexDirection="column" gap={5} align="center">
-            <Box>
+            <Box width="4rem">
               <Capsule text="Reps" />
             </Box>
             <Box fontSize={["1xl", "1xl", "2xl"]}>{reps}</Box>
