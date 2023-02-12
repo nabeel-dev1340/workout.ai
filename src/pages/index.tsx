@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import NavBar from "components/NavBar";
 import Headline from "components/Headline";
-import Tile from "components/Tile";
-import TilesContainer from "components/TilesContainer";
-import UserInput from "components/UserInput";
+import WorkoutPlan from "components/WorkoutPlan";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
@@ -44,12 +42,7 @@ export default function Home() {
       <main>
         <NavBar />
         <Headline />
-        <TilesContainer>
-          <Tile />
-          <Tile />
-          <Tile />
-          <Tile />
-        </TilesContainer>
+        <WorkoutPlan />
       </main>
     </>
   );
