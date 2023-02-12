@@ -4,6 +4,7 @@ import NavBar from "components/NavBar";
 import Headline from "components/Headline";
 import Tile from "components/Tile";
 import TilesContainer from "components/TilesContainer";
+import UserInput from "components/UserInput";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
@@ -47,6 +48,7 @@ export default function Home() {
           <Tile />
         </TilesContainer>
       </main>
+      <UserInput/>
     </>
   );
 }
