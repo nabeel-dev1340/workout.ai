@@ -46,9 +46,11 @@ export default function Home() {
         <Headline />
         <TilesContainer>
           <Tile />
+          <Tile />
+          <Tile />
+          <Tile />
         </TilesContainer>
       </main>
-      <UserInput/>
     </>
   );
 }

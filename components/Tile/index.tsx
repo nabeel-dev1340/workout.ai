@@ -23,13 +23,13 @@ const Tile = ({
         alignItems="center"
         justifyContent={["space-around", "center", "space-around"]}
         bg="white"
-        width={["100%", "100%", "1200px"]}
+        width={["95%", "95%","95%","1024px", "1200px"]}
         flexDirection={["column", "column", "row"]}
         height="180px"
         color="#3e234b"
         fontWeight={600}
         boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
-        rounded={10}
+        rounded={20}
       >
         <Flex
           justify="space-around"
@@ -42,19 +42,19 @@ const Tile = ({
             <Box>
               <Capsule text="Exercise" />
             </Box>
-            <Box fontSize={["1xl", "2xl", "3xl"]}>1. {exercise}</Box>
+            <Box fontSize={["1xl", "1xl", "2xl"]}>1. {exercise}</Box>
           </Flex>
           <Flex flexDirection="column" gap={5} align="center">
             <Box>
               <Capsule text="Sets" />
             </Box>
-            <Box fontSize={["1xl", "2xl", "3xl"]}>{sets}</Box>
+            <Box fontSize={["1xl", "1xl", "2xl"]}>{sets}</Box>
           </Flex>
           <Flex flexDirection="column" gap={5} align="center">
             <Box>
               <Capsule text="Reps" />
             </Box>
-            <Box fontSize={["1xl", "2xl", "3xl"]}>{reps}</Box>
+            <Box fontSize={["1xl", "1xl", "2xl"]}>{reps}</Box>
           </Flex>
         </Flex>
         <Button
