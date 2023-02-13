@@ -6,28 +6,28 @@ import WorkoutPlan from "components/WorkoutPlan";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
-  const [time, setTime] = useState(30);
-  const [muscle, setMuscle] = useState("chest");
+  const [time, setTime] = useState(45);
+  const [muscle, setMuscle] = useState("biceps");
   const [equipment, setEquipment] = useState("dumbbell");
   const [location, setLocation] = useState("gym");
 
   const [workoutData, setWorkoutData] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     if (!time || !muscle || !equipment || !location) {
-  //       return;
-  //     }
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!time || !muscle || !equipment || !location) {
+        return;
+      }
 
-  //     const response = await fetch(
-  //       `https://wild-gray-goshawk-wrap.cyclic.app/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
-  //     );
-  //     const data = await response.json();
-  //     setWorkoutData(data);
-  //   };
+      const response = await fetch(
+        `https://wild-gray-goshawk-wrap.cyclic.app/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
+      );
+      const data = await response.json();
+      setWorkoutData(data);
+    };
 
-  //   fetchData();
-  // }, [time, muscle, equipment, location]);
+    fetchData();
+  }, [time, muscle, equipment, location]);
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function Home() {
       <main>
         <NavBar />
         <Headline />
-        <WorkoutPlan />
+        {workoutData && <WorkoutPlan data={workoutData} />}
       </main>
     </>
   );

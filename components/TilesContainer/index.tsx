@@ -7,7 +7,7 @@ type Props = {
 
 const TilesContainer = ({ children }: Props) => {
   return (
-    <Flex justify="center" flexDirection="column" align="center" gap={5}>
+    <Flex  justify="center" align="center"  flexDirection={["column","column","row"]}  gap={5} wrap="wrap">
       {children}
     </Flex>
   );
