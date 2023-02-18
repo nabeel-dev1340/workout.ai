@@ -12,10 +12,11 @@ const Headline = () => {
       color="whiteAlpha.900"
     >
       <Box fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }} fontWeight="900">
-        Achieve Your Fitness Goals with AI-Powered Workouts
+        Get fit with ease using our AI-powered workout planner.
       </Box>
       <Text fontSize="2xl">
-        Transform your fitness routine with the power of AI
+        Start your fitness journey today with our AI workout planner and get
+        ready to achieve your fitness goals.
       </Text>
     </Box>
   );

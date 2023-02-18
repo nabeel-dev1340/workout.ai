@@ -32,11 +32,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>AI Workout Planner</title>
+        <title>Your Workout Planner</title>
         <meta
           name="description"
-          content="App to generate personalized workout plans using AI"
+          content="Are you looking to get in shape but not sure where to start? Our AI-powered workout planner is here to help! We understand that everyone has different fitness goals and preferences, which is why we offer personalized workout plans designed to help you achieve your goals."
         />
+         <meta property="og:locale" content="en_US" />
+         <meta property="og:title" content="Get AI-powered workout plans for free" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
