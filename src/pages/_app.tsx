@@ -18,7 +18,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <LoadingAnimation />
       ) : (
         <Box
-          height="100vh"
           backgroundImage="linear-gradient(to right, #5ee7df, #b490ca)"
         >
           <Component {...pageProps} />

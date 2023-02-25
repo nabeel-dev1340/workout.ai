@@ -6,11 +6,11 @@ import {
   Checkbox,
   Stack,
   Text,
-  Flex,
-  Button,
   HStack,
   RadioGroup,
-  Radio
+  Radio,
+  Input,
+  Button
 } from '@chakra-ui/react'
 
 const muscles: string[] = ['Chest', 'Back', 'Shoulders', 'Arms', 'Legs', 'Abs']
@@ -33,20 +33,19 @@ const ExerciseForm = () => {
 
   return (
     <form>
-       <Stack alignItems={'center'} justifyContent={'center'} spacing={10}>
+      <Stack alignItems={'center'} justifyContent={'center'} spacing={10}>
+        <Input focusBorderColor='purple.200' placeholder="Enter workout session time in minutes" width={'50%'} />
         <HStack spacing={200}>
           <FormControl>
-            <FormLabel htmlFor="muscle-select">
-              <Text as="strong"> Muscles</Text>
-            </FormLabel>
 
             <Select
               id="muscle-select"
               value={selectedMuscle}
               onChange={handleMuscleSelection}
               width="300px"
+              placeholder="Select a muscle group"
+              focusBorderColor='purple.200'
             >
-              <option value="">Select a muscle group</option>
               {muscles.map(muscle => (
                 <option key={muscle} value={muscle}>
                   {muscle}
@@ -61,10 +60,10 @@ const ExerciseForm = () => {
             <Stack spacing={10} direction="row">
               <RadioGroup mt={5}>
                 <Stack direction="row">
-                  <Radio value="1">
+                  <Radio value="1" colorScheme='purple'>
                     <Text fontWeight={'light'}> Gym </Text>
                   </Radio>
-                  <Radio value="2">
+                  <Radio value="2" colorScheme='purple'>
                     <Text fontWeight={'light'}> Home </Text>
                   </Radio>
                 </Stack>
@@ -76,9 +75,13 @@ const ExerciseForm = () => {
           <FormLabel>
             <Text as="strong"> Equipment</Text>
           </FormLabel>
-          {equipment.map(e => <Checkbox key={e}><Text fontWeight={'light'}> {e} </Text></Checkbox>)}
+          {equipment.map(e => <Checkbox key={e} colorScheme='purple' ><Text fontWeight={'light'}> {e} </Text></Checkbox>)}
+        </Stack>
+        <Stack width={'200px'}>
+          <Button variant={'lg'} bg="linear-gradient(to right, #5ee7df, #b490ca)" >Generate</Button>
+          </Stack>
       </Stack>
-      </Stack>
+      
       </form>
     
   )

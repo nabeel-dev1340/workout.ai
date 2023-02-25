@@ -9,7 +9,7 @@ const UserInput = () => {
       <Box
         width="50%"
         height="50%"
-        bg="white"
+        bg="#F5F4F8"
         marginRight={'15px'}
         color="black"
         fontWeight={600}

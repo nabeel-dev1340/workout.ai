@@ -11,6 +11,7 @@ const NavBar = () => {
       p={3}
       bg="linear-gradient(to right, #5ee7df, #b490ca)"
       boxShadow={"md"}
+      position="sticky"
     >
       <Flex justify="center" align="center" bg="white" rounded="full" p={1}>
         <Box
