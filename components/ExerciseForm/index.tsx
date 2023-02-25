@@ -12,6 +12,7 @@ import {
   Input,
   Button
 } from '@chakra-ui/react'
+import Capsule from 'components/Capsule'
 
 const muscles: string[] = ['Chest', 'Back', 'Shoulders', 'Arms', 'Legs', 'Abs']
 
@@ -34,17 +35,20 @@ const ExerciseForm = () => {
   return (
     <form>
       <Stack alignItems={'center'} justifyContent={'center'} spacing={10}>
-        <Input focusBorderColor='purple.200' placeholder="Enter workout session time in minutes" width={'50%'} />
-        <HStack spacing={200}>
+        <Input
+          focusBorderColor="purple.200"
+          placeholder="Enter workout session time in minutes"
+          width={['90%', '70%', '50%']}
+        />
+        <Stack spacing={[0, 4, 8]} ml={[0, 4]} mt={[4, 0]}>
           <FormControl>
-
             <Select
               id="muscle-select"
               value={selectedMuscle}
               onChange={handleMuscleSelection}
-              width="300px"
+              width={['100%', '80%', '300px']}
               placeholder="Select a muscle group"
-              focusBorderColor='purple.200'
+              focusBorderColor="purple.200"
             >
               {muscles.map(muscle => (
                 <option key={muscle} value={muscle}>
@@ -55,35 +59,47 @@ const ExerciseForm = () => {
           </FormControl>
           <HStack ml={4}>
             <FormLabel mt={7}>
-              <Text as="strong"> Location </Text>
+              <Text as="strong">
+                <Capsule text="Location" />{' '}
+              </Text>
             </FormLabel>
             <Stack spacing={10} direction="row">
               <RadioGroup mt={5}>
                 <Stack direction="row">
-                  <Radio value="1" colorScheme='purple'>
+                  <Radio value="1" colorScheme="purple">
                     <Text fontWeight={'light'}> Gym </Text>
                   </Radio>
-                  <Radio value="2" colorScheme='purple'>
+                  <Radio value="2" colorScheme="purple">
                     <Text fontWeight={'light'}> Home </Text>
                   </Radio>
                 </Stack>
               </RadioGroup>
             </Stack>
           </HStack>
-        </HStack>
-        <Stack >
-          <FormLabel>
-            <Text as="strong"> Equipment</Text>
-          </FormLabel>
-          {equipment.map(e => <Checkbox key={e} colorScheme='purple' ><Text fontWeight={'light'}> {e} </Text></Checkbox>)}
         </Stack>
-        <Stack width={'200px'}>
-          <Button variant={'lg'} bg="linear-gradient(to right, #5ee7df, #b490ca)" >Generate</Button>
-          </Stack>
+        <Stack>
+          <FormLabel>
+            <Text as="strong">
+              {' '}
+              <Capsule text="Equipment" />
+            </Text>
+          </FormLabel>
+          {equipment.map(e => (
+            <Checkbox key={e} colorScheme="purple">
+              <Text fontWeight={'light'}> {e} </Text>
+            </Checkbox>
+          ))}
+        </Stack>
+        <Stack width={['90%', '70%', '200px']}>
+          <Button
+            variant={'lg'}
+            bg="linear-gradient(to right, #5ee7df, #b490ca)"
+          >
+            Generate
+          </Button>
+        </Stack>
       </Stack>
-      
-      </form>
-    
+    </form>
   )
 }
 export default ExerciseForm

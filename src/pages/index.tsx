@@ -3,6 +3,7 @@ import Head from "next/head";
 import NavBar from "components/NavBar";
 import Headline from "components/Headline";
 import WorkoutPlan from "components/WorkoutPlan";
+import UserInput from "components/UserInput";
 
 export default function Home() {
   //TODO: Add default values when UI is implemented
@@ -45,7 +46,7 @@ export default function Home() {
         <NavBar />
         <Headline />
         <UserInput/>
-        {/* {workoutData && <WorkoutPlan data={workoutData} />} */}
+        {workoutData && <WorkoutPlan data={workoutData} />}
       </main>
     </>
   );
