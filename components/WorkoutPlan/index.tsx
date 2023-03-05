@@ -1,50 +1,65 @@
-import React from "react";
-import { Heading, Box, Flex, Text } from "@chakra-ui/react";
-import { Warmup, Exercise, CoolDown } from "Animations";
-import Tile from "components/Tile";
-import PreWorkoutTile from "components/PreWorkoutTile";
-import TilesContainer from "components/TilesContainer";
-import getTutotialLink from "utils/getTutorialLink";
+import React from 'react'
+import { Stack, Box, Flex, Button } from '@chakra-ui/react'
+import { Warmup, Exercise, CoolDown } from 'Animations'
+import Tile from 'components/Tile'
+import PreWorkoutTile from 'components/PreWorkoutTile'
+import TilesContainer from 'components/TilesContainer'
+import getTutotialLink from 'utils/getTutorialLink'
 
-const WorkoutPlan = ({ data }: any) => {
-  const WarmupExercises = data["Warm Up"].map((item: any, index: number) => (
+const WorkoutPlan = ({ data, setForm, setWorkoutData }: any) => {
+  const WarmupExercises = data['Warm Up'].map((item: any, index: number) => (
     <PreWorkoutTile
-      exercise={item["Exercise"]}
-      time={item["Time"]}
+      exercise={item['Exercise']}
+      time={item['Time']}
       index={index}
-      key={item["Exercise"]}
-      link={getTutotialLink(item["Exercise"])}
+      key={item['Exercise']}
+      link={getTutotialLink(item['Exercise'])}
     />
-  ));
+  ))
 
-  const Exercises = data["Exercises"].map((item: any, index: number) => (
+  const Exercises = data['Exercises'].map((item: any, index: number) => (
     <Tile
-      exercise={item["Exercise"]}
-      reps={item["Reps"]}
-      sets={item["Sets"]}
+      exercise={item['Exercise']}
+      reps={item['Reps']}
+      sets={item['Sets']}
       index={index}
-      key={item["Exercise"]}
-      link={getTutotialLink(item["Exercise"])}
+      key={item['Exercise']}
+      link={getTutotialLink(item['Exercise'])}
     />
-  ));
+  ))
 
-  const CoolDownExercises = data["Cool Down"].map(
+  const CoolDownExercises = data['Cool Down'].map(
     (item: any, index: number) => (
       <PreWorkoutTile
-        exercise={item["Exercise"]}
-        time={item["Time"]}
+        exercise={item['Exercise']}
+        time={item['Time']}
         index={index}
-        key={item["Exercise"]}
-        link={getTutotialLink(item["Exercise"])}
+        key={item['Exercise']}
+        link={getTutotialLink(item['Exercise'])}
       />
     )
-  );
+  )
 
   return (
-    <Flex flexDirection="column" justifyContent="center" color="whiteAlpha.900">
+    <Flex
+      flexDirection="column"
+      justifyContent="center"
+      color="whiteAlpha.900"
+      align={'center'}
+    >
+      <Stack width={['90%', '70%', '200px']}>
+        <Button
+          variant={'lg'}
+          bg="#eb2121"
+          height={50}
+          onClick={() => { setForm(true); setWorkoutData(null)}}
+        >
+          Generate Again
+        </Button>
+      </Stack>
       <Flex align="center" justify="center" gap={5}>
         <Box
-          fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
+          fontSize={{ base: '2xl', md: '2xl', lg: '2xl' }}
           fontWeight="900"
           mt={3}
           bg="#eb2121"
@@ -62,7 +77,7 @@ const WorkoutPlan = ({ data }: any) => {
       <TilesContainer>{WarmupExercises}</TilesContainer>
       <Flex alignItems="center" justify="center" gap={5} mt={5}>
         <Box
-          fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
+          fontSize={{ base: '2xl', md: '2xl', lg: '2xl' }}
           fontWeight="900"
           mt={3}
           bg="#eb2121"
@@ -80,7 +95,7 @@ const WorkoutPlan = ({ data }: any) => {
       <TilesContainer>{Exercises}</TilesContainer>
       <Flex alignItems="center" justify="center" gap={5} mt={5}>
         <Box
-          fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
+          fontSize={{ base: '2xl', md: '2xl', lg: '2xl' }}
           fontWeight="900"
           mt={3}
           bg="#eb2121"
@@ -97,7 +112,7 @@ const WorkoutPlan = ({ data }: any) => {
       </Flex>
       <TilesContainer>{CoolDownExercises}</TilesContainer>
     </Flex>
-  );
-};
+  )
+}
 
-export default WorkoutPlan;
+export default WorkoutPlan
