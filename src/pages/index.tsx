@@ -6,30 +6,6 @@ import WorkoutPlan from "components/WorkoutPlan";
 import UserInput from "components/UserInput";
 
 export default function Home() {
-  //TODO: Add default values when UI is implemented
-  const [time, setTime] = useState(45);
-  const [muscle, setMuscle] = useState("biceps");
-  const [equipment, setEquipment] = useState("dumbbell");
-  const [location, setLocation] = useState("gym");
-
-  const [workoutData, setWorkoutData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!time || !muscle || !equipment || !location) {
-        return;
-      }
-
-      const response = await fetch(
-        `https://wild-gray-goshawk-wrap.cyclic.app/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
-      );
-      const data = await response.json();
-      setWorkoutData(data);
-    };
-
-    fetchData();
-  }, [time, muscle, equipment, location]);
-
   return (
     <>
       <Head>
@@ -45,8 +21,7 @@ export default function Home() {
       <main>
         <NavBar />
         <Headline />
-        <UserInput/>
-        {workoutData && <WorkoutPlan data={workoutData} />}
+        <UserInput />
       </main>
     </>
   );
