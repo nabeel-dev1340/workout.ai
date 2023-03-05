@@ -100,7 +100,7 @@ const ExerciseForm = ({setData, setLoading, setForm}:{setData: any, setLoading: 
       <Stack alignItems={'center'} justifyContent={'center'} spacing={10}>
         <Input
           focusBorderColor="purple.200"
-          placeholder="Enter workout session time in minutes"
+          placeholder="session time in minutes"
           width={['90%', '70%', '50%']}
           type="number"
           value={time}
