@@ -55,7 +55,7 @@ const WorkoutPlan = ({ data, setForm, setWorkoutData }: any) => {
           setForm(true)
           setWorkoutData(null)
         }}
-        width={['90%', '70%', '200px']}
+        width={"200px"}
       >
         Generate Again
       </Button>
