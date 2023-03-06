@@ -14,9 +14,7 @@ const UserInput = () => {
       {loading ? (
         <Loading />
       ) : workoutData ? (
-        <Box>
             <WorkoutPlan data={workoutData} setForm={setForm} setWorkoutData={setWorkoutData} />
-        </Box>
       ) : (
         form && (
           <VStack justify="center" align="center">
