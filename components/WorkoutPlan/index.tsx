@@ -65,7 +65,7 @@ const WorkoutPlan = ({ data, setForm, setWorkoutData }: any) => {
         color="whiteAlpha.900"
         align={'center'}
       >
-        <Flex align="center" justify="center" gap={5}>
+        <Flex alignItems="center" justify="center" gap={5}>
           <Box
             fontSize={{ base: '2xl', md: '2xl', lg: '2xl' }}
             fontWeight="900"
@@ -78,7 +78,7 @@ const WorkoutPlan = ({ data, setForm, setWorkoutData }: any) => {
           >
             Warm-Up
           </Box>
-          <Box width={150} height={150} m={'8'}>
+          <Box width={150} height={150} marginBottom={4}>
             <Warmup />
           </Box>
         </Flex>
