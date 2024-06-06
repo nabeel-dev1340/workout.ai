@@ -97,7 +97,7 @@ const ExerciseForm = ({
     }
 
     const response = await fetch(
-      `https://wild-gray-goshawk-wrap.cyclic.app/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
+      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/?time=${time}&muscle=${muscle}&location=${location}&equipment=${equipment}`
     );
     const data = await response.json();
     setLoading(false);
